@@ -1,0 +1,27 @@
+.hospitalsNearbyCard {
+  &Wrapper {
+    @apply border-2;
+    @apply border-t-0;
+    @apply border-solid;
+    @apply border-snow;
+    border-radius: 1rem;
+    &:hover {
+      box-shadow: 0px 0px 11px -2px rgba(5, 41, 74, 0.23);
+    }
+  }
+  &Image {
+    @apply bg-blue-lighter;
+    @apply border-0;
+    width: 100%;
+    height: 13rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+  &Details {
+    @apply text-center;
+    @apply px-1;
+    @apply py-5;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+}

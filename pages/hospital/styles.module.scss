@@ -1,0 +1,48 @@
+.hospitalDetailsWrapper {
+  padding: 8rem 6rem 0;
+  @apply border-t-2;
+  @apply border-solid;
+  @apply border-snow;
+  @apply justify-between;
+  .hospitalDetails {
+    &SummaryImg {
+      width: 13rem;
+      height: 13rem;
+      object-fit: cover;
+      border-radius: 8px;
+      background-color: #f7f9fa;
+    }
+    &SummaryData {
+      @apply flex;
+      @apply flex-col;
+      @apply justify-between;
+      @apply items-start;
+      margin-left: 4rem;
+    }
+    &SummaryTitle {
+      font-weight: 700;
+      font-size: 36px;
+      margin-bottom: 4px;
+    }
+    &Overview {
+      &Title {
+        font-size: 20px;
+        font-weight: 700;
+        flex: 1;
+      }
+      &Data {
+        display: flex;
+        flex: 3;
+      }
+    }
+    &NearbySection {
+      width: 31%;
+    }
+    &NearbyDivider {
+      width: 3rem;
+    }
+  }
+  .callbtn {
+    width: 10rem;
+  }
+}

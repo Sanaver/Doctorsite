@@ -1,0 +1,55 @@
+image: docker:git
+services:
+  - docker:dind
+
+stages:
+  - build
+  # - test
+  - release
+  - deploy
+
+variables:
+  CONTAINER_TEST_IMAGE: registry.gitlab.com/doczo.com/doczo-web:$CI_BUILD_REF_NAME
+  CONTAINER_RELEASE_IMAGE: registry.gitlab.com/doczo.com/doczo-web:latest
+  DOCKER_IMAGE_NAME: super-doczo-web-uat
+  DOCKER_PORT: 3000
+
+build:
+  stage: build
+  script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+    - docker build -t $CONTAINER_TEST_IMAGE .
+    - docker push $CONTAINER_TEST_IMAGE
+  only:
+    - release-uat
+
+release-image:
+  stage: release
+  script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+    - docker pull $CONTAINER_TEST_IMAGE
+    - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_RELEASE_IMAGE
+    - docker push $CONTAINER_RELEASE_IMAGE
+  only:
+    - release-uat
+
+deploy:
+  stage: deploy
+  image: kroniak/ssh-client:3.6
+  script:
+    # add the server as a known host
+    - mkdir ~/.ssh
+    - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    # add ssh key stored in SSH_PRIVATE_KEY variable to the agent store
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$SSH_PRIVATE_KEY")
+    # log into Docker registry
+    - ssh deployer@95.217.130.140 "docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com"
+    # stop container, remove image.
+    - ssh deployer@95.217.130.140 "docker stop $DOCKER_IMAGE_NAME && docker rm $DOCKER_IMAGE_NAME" || true
+    - ssh deployer@95.217.130.140 "docker pull $CONTAINER_RELEASE_IMAGE" || true
+    # start new container
+    - ssh deployer@95.217.130.140 "docker run --restart=unless-stopped -d --name $DOCKER_IMAGE_NAME -p $DOCKER_PORT:3000 -i -t $CONTAINER_RELEASE_IMAGE"
+  only:
+    - release-uat

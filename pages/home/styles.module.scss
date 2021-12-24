@@ -1,0 +1,163 @@
+.searchFormWrapper {
+  width: 400px;
+  background-color: #fff;
+  box-shadow: 0 0 12px -1px rgba(204, 204, 204, 0.59);
+  border-radius: 9px;
+  padding: 25px;
+  margin-left: 10%;
+  position: relative;
+  bottom: -60px;
+  transition: 0.3s ease;
+}
+
+.searchFormTitle {
+  display: block;
+  font-size: 38px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.specialities__heading {
+  &:after {
+    content: "";
+    height: 4px;
+    width: 40px;
+    display: block;
+    margin: 0 auto;
+    background: #007aff;
+    margin-top: 13px;
+  }
+}
+
+.online_video_consultation__button {
+  background: #edfaf5;
+  color: #75d9b3;
+}
+.online_video_consultation__wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  box-shadow: 0px 0px 40px rgba(5, 41, 74, 0.08);
+  &::after {
+    content: "";
+    z-index: -1;
+    display: block;
+    background: #ebf4ff;
+    width: 140%;
+    height: 150%;
+    position: absolute;
+    left: 20%;
+    top: 0;
+    transform: rotate(-70deg);
+  }
+}
+
+.bannerImage {
+  bottom: 0;
+  right: 17%;
+  height: auto;
+  width: 350px;
+}
+
+.ring {
+  width: 60.5rem;
+  position: absolute;
+  left: 26%;
+  top: 0;
+  height: 100%;
+}
+
+.middleRing {
+  position: absolute;
+  left: 40%;
+  top: 13%;
+  width: 49rem;
+  height: 25rem;
+}
+
+.bottomRing {
+  position: absolute;
+  left: 54%;
+  top: 55%;
+  height: 13rem;
+
+}
+// .arehospitalbg{
+//   position: relative;
+ 
+//   background-image: url("../../public/images/Group\ 9.png");
+//   background-repeat: no-repeat;
+//   width: 1094px;
+// height: 547px;
+// }
+
+@media screen and (max-width: 1440px) and (min-width:1370px) {
+.ring {
+  left: 31%;
+}
+.middleRing {
+  position: absolute;
+  left: 44%;
+}
+.bottomRing {
+  position: absolute;
+  left: 56%;
+}
+}
+
+@media screen and (max-width: 1024px) {
+ .ring {
+    display: none;
+  }
+
+  .middleRing {
+    display: none;
+  }
+
+  .bottomRing {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1052px) {
+  .bannerImage {
+    bottom: 0;
+    right: 2%;
+    height: auto;
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 1052px) {
+  .searchFormWrapper {
+    margin-left: 4%;
+    background: rgba(255, 255, 255, 0.95);
+  }
+}
+
+@media screen and (max-width: 1033px) {
+  .online_video_consultation__wrapper {
+    &:after {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .searchFormWrapper {
+    margin-left: 0;
+    width: 100%;
+  }
+  .online_video_consultation__wrapper {
+    &:after {
+      left: 40%;
+    }
+  }
+}
+
+
+@media screen and (max-width: 425px) {
+.searchFormTitle {
+  font-size: 30px;
+}
+}

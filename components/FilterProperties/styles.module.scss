@@ -1,0 +1,40 @@
+.filterPropertiesWrapper {
+  display: block;
+  padding: 1px;
+  border-radius: 9px;
+  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  @apply bg-navy;
+  @apply text-white;
+  .filterPropertiesTitle {
+    display: block;
+    margin: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .filterPropertiesBody {
+    display: flex;
+    padding: 0 25px 25px;
+  }
+  .filterPropertiesSection {
+    display: flex;
+    flex-direction: column;
+    padding-right: 6rem;
+    .filterPropertiesSectionTitle {
+      font-weight: 500;
+      padding-bottom: 10px;
+    }
+    .filterPropertiesSectionCheckbox {
+      padding-bottom: 5px;
+    }
+  }
+}
+@keyframes slide-top {
+  0% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

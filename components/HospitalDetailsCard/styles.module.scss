@@ -1,0 +1,157 @@
+.hospitalCardWrapper {
+  @apply flex;
+  @apply px-2;
+  @apply py-8;
+  @apply border-b-2;
+  @apply border-snow;
+  @apply border-solid;
+  &:hover {
+    // box-shadow: 0px 4px 11px 0px #eee;
+    .fontHospitalTitle {
+      @apply text-blue;
+    }
+  }
+}
+.hospitalCardImageWrapper {
+  img {
+    width: 7.3rem;
+    height: 7.3rem;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: #f7f9fa;
+  }
+}
+
+.hospitalCardDetails {
+  padding: 0 4rem 0 2.5rem;
+  font-size: 16px;
+}
+.hospitalCardAction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fontHospitalTitle {
+  font-size: 20px;
+  &:hover {
+    @apply underline;
+  }
+}
+
+.fontHospitalFeeTitle {
+  color: #05294a;
+}
+
+.callbtn {
+  width: 10rem;
+}
+
+// ---------- Media Queries ---------- //
+
+@media (max-width: 768px) {
+  .fontHospitalTitle {
+    font-size: 12px;
+  }
+
+  .hospitalCardDetails {
+    padding: 0 1rem 0 0.5rem;
+  }
+
+  .hospitalCardDetails p {
+    font-size: 12px;
+  }
+
+  .callbtn {
+    height: 40px;
+    width: 7rem;
+    padding: 7px 7px !important;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 640px) and (min-width: 475px) {
+  .hospitalCardDetails {
+    padding: 0 1rem 0 0.5rem;
+  }
+
+  .hospitalCardImageWrapper {
+    img {
+      width: 6rem;
+      height: 6rem;
+    }
+  }
+
+  .hospitalCardAction {
+    font-size: 12px;
+  }
+
+  .hospitalCardDetails {
+    font-size: 12px;
+  }
+
+  .fontHospitalTitle {
+    font-size: 12px;
+  }
+
+  .callbtn {
+    height: 40px;
+    width: 7rem;
+    padding: 7px 7px !important;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 425px) {
+  .hospitalCardDetails {
+    padding: 0 0rem 0 0.2rem;
+  }
+
+  .hospitalCardImageWrapper {
+    img {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+
+  .fontHospitalTitle {
+    font-size: 12px;
+  }
+
+  .callbtn {
+    height: 40px;
+    width: 6rem;
+    padding: 7px 7px !important;
+    font-size: 12px;
+  }
+
+  .hospitalCardAction {
+    font-size: 12px;
+  }
+
+  .hospitalCardDetails {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  .hospitalCardImageWrapper {
+    img {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+  .hospitalCardAction {
+    font-size: 10px;
+  }
+
+  .hospitalCardDetails {
+    font-size: 10px;
+  }
+  .fontHospitalTitle {
+    font-size: 10px;
+  }
+  .callbtn {
+    font-size: 10px;
+    height: 35px;
+  }
+}

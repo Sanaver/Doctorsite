@@ -1,0 +1,56 @@
+@mixin commonPillStyles {
+  font-size: 14px;
+  border-radius: 4px;
+  line-height: 1;
+  font-weight: 500;
+  padding: 7px 10px;
+}
+@mixin commonSolidPillStyles {
+  line-height: 1;
+  font-weight: 500;
+  font-size: 15px;
+  @apply py-5;
+  @apply px-4;
+  border-radius: 10px;
+  min-width: 10rem;
+  @apply mb-3;
+  @apply mr-3;
+}
+.filterPillsWrapper {
+  @apply flex;
+  @apply justify-center;
+  @apply items-center;
+  color: rgba(5, 41, 74, 0.64);
+  border: 1px solid rgba(5, 41, 74, 0.16);
+  @include commonPillStyles();
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: 0px 0px 4px 0px rgba(5, 41, 74, 0.16);
+  }
+  img {
+    margin-left: 5px;
+    cursor: pointer;
+  }
+}
+.filterClearPill {
+  outline: none;
+  border: 1px solid rgba(254, 86, 91, 0.16);
+  cursor: pointer;
+  @include commonPillStyles();
+  @apply text-red;
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: 0px 0px 4px 0px rgba(254, 86, 91, 0.16);
+  }
+}
+.solidBtnPill {
+  @include commonSolidPillStyles();
+  background-color: #f7f9fa;
+}
+.solidBtnPill_active {
+  @include commonSolidPillStyles();
+  @apply bg-blue;
+  @apply text-white;
+}

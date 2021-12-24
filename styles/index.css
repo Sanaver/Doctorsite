@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+/* Start purging... */
+@tailwind utilities;
+/* Stop purging. */
+
+/* @include font-face( Averta, '/fonts/Averta/Averta-Regular', 400, normal, otf);
+@include font-face( Averta, '/fonts/Averta/Averta-Semibold', 500, medium, otf);
+@include font-face( Averta, '/fonts/Averta/Averta-Bold', 700, bold, otf);
+@include font-face( Averta, '/fonts/Averta/Averta-ExtraBold', 900, bolder, otf); */
+@font-face {
+  font-family: 'Averta';
+  src: url('/fonts/Averta/Averta-Regular.otf') format('opentype');
+  font-display: swap;
+}
+
+html,
+body {
+  font-family: 'Averta', Arial, sans-serif;
+}
+
+/* ---- for removing number arrows from input type number : starts -------*/
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* ---- for removing number arrows from input type number : ends  -------*/
+
+/* ---- for removing chrome black outline form all elements : ends  -------*/
+
+*, input, select, textarea, option, button {
+  outline: none!important;
+}
+
+/* ---- for removing chrome black outline form all elements : ends  -------*/

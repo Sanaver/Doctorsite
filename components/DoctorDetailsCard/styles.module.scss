@@ -1,0 +1,140 @@
+.doctorCardPreviewWrap {
+  min-width: 48.1%;
+  max-width: 10rem;
+}
+
+.doctorCardImageWrapper {
+  img {
+    width: 7.3rem;
+    height: 7.3rem;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: #f7f9fa;
+  }
+}
+.doctorCardDetails {
+  padding: 0 4rem 0 2.5rem;
+  font-size: 15px;
+}
+.doctorCardAction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fontDoctorTitle {
+  font-size: 19px;
+}
+
+.callbtn {
+  width: 10rem;
+}
+
+// ---------- Media Queries ---------- //
+
+@media (max-width: 768px) {
+  .fontDoctorTitle {
+    font-size: 12px;
+  }
+
+  .doctorCardDetails {
+    padding: 0 1rem 0 0.5rem;
+  }
+
+  .doctorCardDetails p {
+    font-size: 12px;
+  }
+
+  .callbtn {
+    height: 40px;
+    width: 7rem;
+    padding: 7px 7px !important;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 640px) and (min-width: 475px) {
+  .doctorCardDetails {
+    padding: 0 1rem 0 0.5rem;
+  }
+
+  .doctorCardImageWrapper {
+    img {
+      width: 6rem;
+      height: 6rem;
+    }
+  }
+
+  .doctorCardAction {
+    font-size: 12px;
+  }
+
+  .doctorCardDetails {
+    font-size: 12px;
+  }
+
+  .fontDoctorTitle {
+    font-size: 12px;
+  }
+
+  .callbtn {
+    height: 40px;
+    width: 7rem;
+    padding: 7px 7px !important;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 425px) {
+  .doctorCardDetails {
+    padding: 0 0rem 0 0.2rem;
+  }
+
+  .doctorCardImageWrapper {
+    img {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+
+  .fontDoctorTitle {
+    font-size: 12px;
+  }
+
+  .callbtn {
+    height: 40px;
+    width: 6rem;
+    padding: 7px 7px !important;
+    font-size: 12px;
+  }
+
+  .doctorCardAction {
+    font-size: 12px;
+  }
+
+  .doctorCardDetails {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  .doctorCardImageWrapper {
+    img {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+  .doctorCardAction {
+    font-size: 10px;
+  }
+
+  .doctorCardDetails {
+    font-size: 10px;
+  }
+  .fontDoctorTitle {
+    font-size: 10px;
+  }
+  .callbtn {
+    font-size: 10px;
+    height: 35px;
+  }
+}

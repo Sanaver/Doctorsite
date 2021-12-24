@@ -1,0 +1,40 @@
+.searchPageWrapper {
+  padding: 1rem 6rem 0;
+  @apply border-t-2;
+  @apply border-solid;
+  @apply border-snow;
+  @apply justify-between;
+}
+@media (max-width: 768px) {
+  .searchPageWrapper {
+    padding: 1rem 2rem 0;
+  }
+}
+@media (max-width: 320px) {
+  .searchPageWrapper {
+    padding: 1rem 1rem 0;
+  }
+}
+
+.searchPageWrapperSubtitle {
+  font-weight: 700;
+  font-size: 22px;
+}
+.searchPageBodyWrapper {
+  display: flex;
+}
+@media (max-width: 425px) {
+  .searchPageBodyWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.searchPageListWrapper {
+  padding-bottom: 3rem;
+}
+.searchPageFiltersList {
+  display: flex;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
